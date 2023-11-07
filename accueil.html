@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="script.js"> </script>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,11 @@
     <title>Eliot Bernaud Design Dessin Bricolage</title>
 </head>
 <body>
+    
     <div id = sidebar>
+
+
+
 
         <h1> ELIOT&nbsp;BERNAUD </h1>
 
@@ -19,71 +24,84 @@
 
     <div id="main">
         <ul id="categories">
-            <li>all</li>
-            <li>objets</li>
-            <li>multimédia</li>
-            <li>dessin</li>
-            <li>mémoire&nbsp;&&nbsp;diplôme</li>
+            <li><button id="buttonObjet" class="button" onclick="test(1)" value ="off" >objet</button></li>
+            <li><button id="buttonFiction" class="button" onclick="test(2)" value ="off" >récit&nbsp;/&nbsp;fiction</button></li>
+            <li><button id="buttonDessin" class="button" onclick="test(0)" value ="off" >dessin</button></li>
+            <li><button id="buttonMemoire" class="button" onclick="test(3)" value ="off" >mémoire&nbsp;/&nbsp;diplôme</button></li>
         </ul>
+
+<script>
+function myFunction() {
+  const element = document.getElementById("myDIV");
+  let nodes = element.getElementsByClassName("child");
+  for (let i = 0; i < nodes.length; i++) {
+    nodes[i].style.color = "red";
+  }
+}
+</script>
 
         <div id = content>
             <div id="projets">
 
             
-                <div class="icons" >
+                <div class="icons memoire">
+                    <p>Parlers Espace</p>
+                    <a href="projets/memoire.html"><img src="assets/icon_parlers-espace.png" alt="Chmup"></a>
+                </div>
+
+                <div class="icons fiction" >
                     <p>Chmup The Dog</p>
                     <a href="projets/chmup.html"><img src="assets/icon_chmup.png" alt="Chmup"></a>
                     
                 </div>
         
-                <div class="icons">
+                <div class="icons objet">
                     <p>Lampe Pince</p>
                     <a href="projets/chmup.html"><img src="assets/icon_lampe-pince.png" alt="Chmup"></a>
                 </div>
         
-                <div class="icons">
+                <div class="icons objet">
                     <p>Lampe Ressort</p>
                     <a href="projets/lamperessort.html"><img src="assets/icon_lampe-ressort.png" alt="Chmup"></a>
                 </div>
         
-                <div class="icons">
+                <div class="icons objet">
                     <p>Mobilier Grillagé</p>
                     <a href="projets/mobiliergrillage.html"><img src="assets/icon_mobilier-grillage.png" alt="Chmup"></a>
                 </div>
         
-                <div class="icons">
-                    <p>Parlers Espace</p>
-                    <a href="projets/chmup.html"><img src="assets/icon_parlers-espace.png" alt="Chmup"></a>
-                </div>
-        
-                <div class="icons">
+                <div class="icons objet">
                     <p>Pol</p>
                     <a href="projets/pol.html"><img src="assets/icon_pol.png" alt="Chmup"></a>
                 </div>
         
-                <div class="icons">
+                <div class="icons fiction">
                     <p>Pomme de Terre</p>
                     <a href="projets/pommedeterre.html"><img src="assets/icon_pomme-de-terre.png" alt="Chmup"></a>
                 </div>
         
-                <div class="icons">
+                <div class="icons fiction">
                     <p>Terres Lointaines</p>
                     <a href="projets/terreslointaines.html"><img src="assets/icon_terres-lointaines.png" alt="Chmup"></a>
                 </div>
         
-                <div class="icons">
+                <div class="icons dessin">
                     <p>Illustrations</p>
                 <a href="projets/illustration.html"><img src="assets/icon_illustrations.png" alt="Chmup"></a>
                 </div>
         
-                <div class="icons">
+                <div class="icons dessin">
                     <p>Carnets</p>
                 <a href="projets/carnets.html"><img src="assets/icon_carnets.png" alt="Chmup"></a>
                 </div>
         
-                <div class="icons">
+                <div class="icons memoire">
                     <p>La Fabrique à Brac</p>
                 <a href="projets/lafabriqueabrac.html"><img src="assets/icon_fabrique.png" alt="Chmup"></a>
+                </div>
+
+                <div class="icons memoire dessin fiction objet">
+                
                 </div>
 
         </div>
