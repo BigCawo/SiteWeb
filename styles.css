@@ -28,7 +28,11 @@
 img{background-color: rgba(0, 0, 255, 0);
     /* padding: 1%; */
     width: 100%; height: 100%;
-     
+    
+
+}
+
+.imgpx{
     image-rendering: optimizeSpeed;             /* STOP SMOOTHING, GIVE ME SPEED  */
     image-rendering: -moz-crisp-edges;          /* Firefox                        */
     image-rendering: -o-crisp-edges;            /* Opera                          */
@@ -36,7 +40,6 @@ img{background-color: rgba(0, 0, 255, 0);
     image-rendering: pixelated;                 /* Universal support since 2021   */
     image-rendering: optimize-contrast;         /* CSS3 Proposed                  */
     -ms-interpolation-mode: nearest-neighbor;   /* IE8+                           */
-
 }
 
 /* ~~~~  général  ~~~~ */
@@ -45,12 +48,15 @@ img{background-color: rgba(0, 0, 255, 0);
 
 ul{list-style-type: none;}
 
+html, body{
+    overflow-x: hidden;
+}
+
 body {background-color: rgba(0, 0, 0, 0);
     position: relative;
     font-family: "Noto Sans", sans-serif;
     font-size: 100%;
     margin: auto;
-    overflow-x: hidden;
 }
 
 
@@ -70,7 +76,7 @@ h2{
     font-size: var(--fs-st);
 }
 
-b{font-weight: 700;}
+b{font-weight: 900;}
 
 a:link { text-decoration: none;}
   
@@ -191,9 +197,9 @@ p{
 
 .carton{background-color: rgba(0, 255, 255, 0);
     max-width: var(--w-carton) ; 
-    /*padding-right: 25px ;*/
     padding-top: 25px;
     padding-bottom: 25px;  
+    padding-right: 25px;
 }
 
 
@@ -276,13 +282,45 @@ p{
 
 /* accueil */
 
+
+
+#descriptions{ 
+    overflow: hidden;
+    max-height: calc( 50vh - var(--h-sidebar) );
+    width: 50%;
+    background-color: rgba(0, 255, 255, 0);
+}
+
+
+
+
+.desc{    
+    overflow: hidden;
+    height: calc( 50vh - var(--h-sidebar) ) ;
+    max-height: 0;
+    max-width: 100%;
+    transition: max-height 0.25s ease;
+    display: flex; align-items: center; position: relative;
+
+}
+
+.desc p{
+    display: block;
+    width: 100%;
+    padding-left: 20px;
+    padding-bottom: 35px ;
+    padding-top: 0;
+}
+
 #categories {
+    height: var(--h-sidebar);
+    align-items: center;
     z-index: 10;
     overflow: hidden;
     display: flex;
     flex-wrap: nowrap;
-    margin: 20px 0;
     overflow-x: auto ;
+    
     scrollbar-width: none;
     -ms-overflow-style: none;
 
@@ -307,7 +345,6 @@ button{
     
     line-height: 0;
     padding: 15px 12px;
-    background-color: rgba(194, 194, 194, 0.486);
     margin-right: 10px;
     text-decoration: none;
     border: none;
@@ -330,20 +367,24 @@ button:hover {
 
 .icons{
     position: relative;
+    max-width: 100%;
     width: 32%;
+    transition: max-width 0.25s ease;
     margin-bottom: 2%;
+    transition-delay: 1s;
+    transition-property: margin-right;
     
 }
 
 .icons img{
 
-    width: 100%;
+ 
     height: 100%;
     padding: 0;
 }
 .icons p{
     z-index: -5;
-    background-color: rgba(0, 0, 255, 0.288);
+    background-color: rgba(0, 0, 255, 0);
 
     line-height: 0;
     position: absolute;
@@ -358,6 +399,45 @@ button:hover {
 
 .icons img:hover{
     opacity: 20%;
+}
+
+/* apropos */
+
+#apropos p{
+    
+    padding: 8px 0;
+}
+
+#apropos img{
+    
+    padding: 40px 0;
+}
+
+#apropos b{
+    
+    font-size: 105%;
+}
+
+#apropos h2{
+    padding: 5px 0;
+}
+
+#cvEntete{
+    width: 47.5%; 
+    display: flex; 
+    align-items: center; 
+    justify-content: start;
+}
+
+#cvCorps{
+
+    display: flex; 
+    align-items: baseline; 
+    justify-content: space-between;
+}
+
+#cvCorps > div{
+    width: 47.5%;
 }
 
 /* ~~~~ mediaqueries ~~~~ */
@@ -398,6 +478,10 @@ html{
 
 /* projets*/
 
+.carton{  
+    padding-right: 0px;
+}
+
 img{
     padding: 20px 0;
 
@@ -431,9 +515,23 @@ img{
     margin-bottom: 5%;
 }
 
+.desc{
+    width: 50%;
+}
+
+/* apropos */
+
+#cvCorps{
+    flex-direction: column;
+}
+
+#cvCorps > div{
+    width: 100%;
 }
 
 
+
+}
 
 /* téléphone */
 
@@ -472,6 +570,14 @@ body{
 /*accueil*/
 
 .icons {
+    width: 100%;
+}
+
+#descriptions{
+    min-height: calc( 80vh - 2 * var(--h-sidebar) );
+}
+
+.desc{
     width: 100%;
 }
 
